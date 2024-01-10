@@ -70,10 +70,6 @@ const Form = () => {
               Cadastrar
             </button>
           </div>
-          <div id="nav-container">
-            <button id="back-nav">Voltar</button>
-            <button id="skip-register">Pular</button>
-          </div>
         </div>
       </div>
       <div className="theme-container">

@@ -137,9 +137,6 @@ const HomePage = () => {
           <span className="slider"></span>
         </label>
       </div>
-      <div>
-        <h2>Total de pessoas: {totalPeople}</h2>
-      </div>
     </div>
   );
 };
