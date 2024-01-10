@@ -5,7 +5,10 @@ const ResultsPage = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { men, women, kids, totalPeople } = location.state;
+  const { men = 0, women = 0, kids = 0 } = location.state || {};
+
+  // Calcular o total de pessoas
+  const totalPeople = men + women + kids;
 
   // Adicione um estado para controlar o checkbox
   const [isChecked, setIsChecked] = useState(false);
@@ -13,6 +16,22 @@ const ResultsPage = () => {
   const handleNewCalculation = () => {
     navigate("/");
   };
+
+  // Calcular a quantidade total de carne
+  const totalMeat = men * 0.5 + women * 0.3 + kids * 0.15;
+
+  // Calcular a quantidade total de refrigerante e água
+  const totalDrink = totalPeople;
+
+  // Calcular a quantidade total de gelo e carvão
+  const totalIce = totalPeople * 0.5;
+  const totalCoal = totalPeople * 0.5;
+
+  // Calcular a quantidade total de sal
+  const totalSalt = totalPeople * 0.005; // 5 gramas é igual a 0.005 kg
+
+  // Calcular a quantidade total de pão de alho
+  const totalGarlicBread = men + women + kids * 0.5;
 
   return (
     <div className="container">
@@ -34,31 +53,31 @@ const ResultsPage = () => {
             <ul className="results">
               <li>
                 <strong>Carne</strong>
-                <span>0.0 kg</span>
+                <span>{totalMeat.toFixed(1)} kg</span>
               </li>
               <li>
                 <strong>Pão de Alho</strong>
-                <span>0 unidades</span>
+                <span>{totalGarlicBread.toFixed(1)} unidades</span>
               </li>
               <li>
                 <strong>Refrigerante</strong>
-                <span>1 garrafa de 2 L</span>
+                <span>{totalDrink} L</span>
               </li>
               <li>
                 <strong>Água</strong>
-                <span>0 garrafa de 1 L</span>
+                <span>{totalDrink} L</span>
               </li>
               <li>
                 <strong>Carvão</strong>
-                <span>0 kg</span>
+                <span>{totalCoal.toFixed(1)} kg</span>
               </li>
               <li>
                 <strong>Sal</strong>
-                <span>0.00 kg</span>
+                <span>{totalSalt.toFixed(3)} kg</span>
               </li>
               <li>
                 <strong>Gelo</strong>
-                <span>0.0 kg</span>
+                <span>{totalIce.toFixed(1)} kg</span>
               </li>
             </ul>
           </div>

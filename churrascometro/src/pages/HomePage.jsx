@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
   const [men, setMen] = useState(0);
   const [women, setWomen] = useState(0);
   const [kids, setKids] = useState(0);
-  const [totalPeople, setTotalPeople] = useState(0);
   const [isChecked, setIsChecked] = useState(false);
+  const [totalPeople, setTotalPeople] = useState(0); // Adicione este estado
 
   const navigate = useNavigate();
 
@@ -20,14 +20,10 @@ const HomePage = () => {
       return;
     }
 
-    setTotalPeople(men + women + kids);
+    const total = men + women + kids;
+    setTotalPeople(total); // Atualize o estado aqui
+    navigate("/form", { state: { totalPeople: total, men, women, kids } });
   };
-
-  useEffect(() => {
-    if (totalPeople > 0) {
-      navigate("/form", { state: { totalPeople, men, women, kids } });
-    }
-  }, [totalPeople, navigate, men, women, kids]);
 
   return (
     <div className="container">
