@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Title } from "../Components/ComponentesGerais/Title";
+import Theme from "../Components/ComponentesGerais/Theme";
 
 const ResultsPage = () => {
   const location = useLocation();
@@ -7,35 +9,25 @@ const ResultsPage = () => {
 
   const { men = 0, women = 0, kids = 0 } = location.state || {};
 
-  // Calcular o total de pessoas
   const totalPeople = men + women + kids;
 
-  // Adicione um estado para controlar o checkbox
   const [isChecked, setIsChecked] = useState(false);
 
   const handleNewCalculation = () => {
     navigate("/");
   };
 
-  // Calcular a quantidade total de carne
   const totalMeat = men * 0.5 + women * 0.3 + kids * 0.15;
 
-  // Calcular a quantidade total de refrigerante e água
   const totalDrink = totalPeople;
-
-  // Calcular a quantidade total de gelo e carvão
   const totalIce = totalPeople * 0.5;
   const totalCoal = totalPeople * 0.5;
-
-  // Calcular a quantidade total de sal
   const totalSalt = totalPeople * 0.005; // 5 gramas é igual a 0.005 kg
-
-  // Calcular a quantidade total de pão de alho
   const totalGarlicBread = men + women + kids * 0.5;
 
   return (
     <div className="container">
-      <h1>Churrascômetro</h1>
+      <Title />
       <div className="calculator">
         <div>
           <div className="result-total-guest">
@@ -90,20 +82,7 @@ const ResultsPage = () => {
           </div>
         </div>
       </div>
-      <div className="theme-container">
-        <label id="label-theme-text" htmlFor="input-theme">
-          Tema Escuro
-        </label>
-        <label className="switch">
-          <input
-            type="checkbox"
-            id="input-theme"
-            checked={isChecked}
-            onChange={() => setIsChecked(!isChecked)}
-          />
-          <span className="slider"></span>
-        </label>
-      </div>
+      <Theme />
     </div>
   );
 };

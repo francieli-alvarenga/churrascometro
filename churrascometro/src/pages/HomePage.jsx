@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Title } from "../Components/ComponentesGerais/Title";
+import { SubTitle } from "../Components/Home/SubTitle";
+import Theme from "../Components/ComponentesGerais/Theme";
 
 const HomePage = () => {
   const [men, setMen] = useState(0);
@@ -27,14 +30,9 @@ const HomePage = () => {
 
   return (
     <div className="container">
-      <h1>Churrascômetro</h1>
+      <Title />
       <div className="calculator">
-        <h3>
-          Precisa de uma ajudinha com o churrasco? :)
-          <br />
-          <br />
-          Quantas pessoas vão participar?
-        </h3>
+        <SubTitle />
         <div className="row-first">
           <div className="input-group">
             <label htmlFor="men">Homens</label>
@@ -123,20 +121,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="theme-container">
-        <label id="label-theme-text" htmlFor="input-theme">
-          Tema Escuro
-        </label>
-        <label className="switch">
-          <input
-            type="checkbox"
-            id="input-theme"
-            checked={isChecked}
-            onChange={handleCheckboxChange}
-          />
-          <span className="slider"></span>
-        </label>
-      </div>
+      <Theme />
     </div>
   );
 };

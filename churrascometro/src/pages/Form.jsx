@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import { Title } from "../Components/ComponentesGerais/Title";
+import Theme from "../Components/ComponentesGerais/Theme";
 
 const Form = () => {
   const navigate = useNavigate();
@@ -18,7 +20,7 @@ const Form = () => {
 
   return (
     <div className="container">
-      <h1>Churrascômetro</h1>
+      <Title />
       <div className="calculator">
         <div className="row">
           <div className="input-form-group">
@@ -72,20 +74,7 @@ const Form = () => {
           </div>
         </div>
       </div>
-      <div className="theme-container">
-        <label id="label-theme-text" htmlFor="input-theme">
-          Tema Escuro
-        </label>
-        <label className="switch">
-          <input
-            type="checkbox"
-            id="input-theme"
-            checked={isChecked}
-            onChange={() => setIsChecked(!isChecked)}
-          />
-          <span className="slider"></span>
-        </label>
-      </div>
+      <Theme />
     </div>
   );
 };

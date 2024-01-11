@@ -1,17 +1,20 @@
+/* Estilos gerais */
 * {
   margin: 0;
   padding: 0;
 }
 
+/* Definição de cores para temas */
 :root {
-  --div-bg: #a0948b;
-  --div-border: #6b5e66;
-  --default-button: #e56132;
+  --div-bg: #ebc14c;
+  --div-border: #c33b50;
+  --default-button: #d99741;
   --title-page: #efa360;
-  --bg-page: #3f373c;
+  --bg-page: #4b4749;
   --text-color: white;
 }
 
+/* Definição de cores para o tema claro */
 .light-theme {
   --div-bg: #a0948b;
   --div-border: #6b5e66;
@@ -21,11 +24,13 @@
   --text-color: #181c23;
 }
 
+/* Estilos para o corpo do documento */
 body {
   font-family: "Fira Code", monospace;
   background-color: var(--bg-page);
 }
 
+/* Estilos para títulos */
 h1 {
   font-size: 54px;
   font-weight: 300;
@@ -43,6 +48,7 @@ caption {
   margin: 15px 0;
 }
 
+/* Estilos para containers */
 .container {
   max-width: 800px;
   margin: 0 auto;
@@ -50,10 +56,13 @@ caption {
   border-radius: 10px;
   text-align: center;
 }
+
+/* Estilos para linhas */
 .row {
   width: 100%;
 }
 
+/* Estilos para a primeira linha */
 .row-first {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -61,6 +70,7 @@ caption {
   margin: 50px 0 15px;
 }
 
+/* Estilos para a calculadora */
 .calculator {
   width: auto;
   display: flex;
@@ -68,6 +78,7 @@ caption {
   align-items: center;
 }
 
+/* Estilos para grupos de entrada */
 .input-group {
   display: flex;
   flex-direction: column;
@@ -80,6 +91,7 @@ caption {
   border: 3px solid var(--div-border);
 }
 
+/* Estilos para labels */
 .input-group label {
   margin-bottom: 5px;
   line-height: 50px;
@@ -93,6 +105,7 @@ caption {
   font-weight: 800;
 }
 
+/* Estilos para inputs do tipo número */
 .input-group input[type="number"] {
   width: 100px;
   text-align: center;
@@ -104,19 +117,23 @@ caption {
   text-align: center;
 }
 
+/* Estilos para o foco em inputs do tipo número */
 .input-group input[type="number"]:focus {
   outline: none;
 }
 
+/* Estilos para inputs válidos */
 .input-valid {
   color: #8b6b52;
 }
 
+/* Estilos para o grupo de botões dentro de um grupo de entrada */
 .input-group .button-group {
   display: flex;
   justify-content: center;
 }
 
+/* Estilos para botões dentro de um grupo de entrada */
 .input-group button {
   padding: 5px 10px;
   font-size: 16px;
@@ -124,6 +141,7 @@ caption {
   cursor: pointer;
 }
 
+/* Estilos para botões pequenos dentro de um grupo de entrada */
 .input-group__button--small {
   display: inline-block;
   border: none;
@@ -139,6 +157,7 @@ caption {
   border-radius: 5px;
 }
 
+/* Estilos para o label "alcoholicLabel" */
 #alcoholicLabel {
   color: #181c23;
   font-size: 17px;
@@ -146,12 +165,14 @@ caption {
   font-weight: 600;
 }
 
+/* Estilos para remover os botões de incremento e decremento dos inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
+/* Estilos para o botão padrão */
 .default-button {
   border: none;
   margin: 30px 0 10px;
@@ -168,6 +189,7 @@ input::-webkit-inner-spin-button {
   display: inline-block;
 }
 
+/* Estilos para o formulário de entrada */
 .input-form {
   color: #8b6b52;
   width: 300px;
@@ -181,6 +203,7 @@ input::-webkit-inner-spin-button {
   border-radius: 10px;
 }
 
+/* Estilos para o formulário */
 form {
   display: flex;
   flex-direction: column;
@@ -189,6 +212,7 @@ form {
   height: 250px;
 }
 
+/* Estilos para o cabeçalho do formulário */
 #header-form {
   font-size: large;
   width: 50%;
@@ -198,17 +222,20 @@ form {
   margin-bottom: 25px;
 }
 
+/* Estilos para o label de consentimento */
 #consent-label {
   color: var(--text-color);
   cursor: pointer;
   margin-bottom: 15px;
 }
 
+/* Estilos para a checkbox de consentimento */
 #consent-checkbox {
   margin-right: 4px;
   cursor: pointer;
 }
 
+/* Estilos para o input de consentimento */
 #consent-input {
   padding-top: 20px;
   max-width: 400px;
@@ -216,6 +243,7 @@ form {
   font-size: smaller;
 }
 
+/* Estilos para mensagens de erro */
 #error-postal-code,
 #invalid-name,
 #invalid-email,
@@ -226,10 +254,12 @@ form {
   visibility: hidden;
 }
 
+/* Estilos para o container de navegação */
 #nav-container {
   position: relative;
 }
 
+/* Estilos para o botão de voltar na navegação */
 #back-nav {
   position: absolute;
   left: 200px;
@@ -239,6 +269,7 @@ form {
   cursor: pointer;
 }
 
+/* Estilos para o botão de pular registro */
 #skip-register {
   position: absolute;
   right: 200px;
@@ -248,6 +279,7 @@ form {
   cursor: pointer;
 }
 
+/* Estilos para o botão de tema */
 #theme-button {
   background-color: var(--div-bg);
   border: none;
@@ -261,6 +293,7 @@ form {
   color: var(--text-color);
 }
 
+/* Estilos para o texto do label de tema */
 #label-theme-text {
   position: absolute;
   top: 18px;
@@ -270,6 +303,7 @@ form {
   color: var(--text-color);
 }
 
+/* Estilos para o switch de tema */
 .switch {
   position: absolute;
   right: 10px;
@@ -279,12 +313,14 @@ form {
   height: 34px;
 }
 
+/* Estilos para o input do switch de tema */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
+/* Estilos para o slider do switch de tema */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -298,6 +334,7 @@ form {
   border-radius: 34px;
 }
 
+/* Estilos para o estado inicial do slider do switch de tema */
 .slider:before {
   position: absolute;
   content: "";
@@ -311,15 +348,18 @@ form {
   border-radius: 50%;
 }
 
+/* Estilos para o estado marcado do slider do switch de tema */
 input:checked + .slider {
   content: "";
   background-color: #181c23;
 }
 
+/* Estilos para o estado focado do slider do switch de tema */
 input:focus + .slider {
   box-shadow: 0 0 1px #181c23;
 }
 
+/* Estilos para o estado marcado do slider do switch de tema */
 input:checked + .slider:before {
   content: "";
   -webkit-transform: translateX(26px);
@@ -327,22 +367,26 @@ input:checked + .slider:before {
   transform: translateX(26px);
 }
 
+/* Estilos para o total de convidados */
 .result-total-guest {
   color: var(--text-color);
   font-size: large;
   margin-bottom: 30px;
 }
 
+/* Estilos para o total de convidados */
 #total-guest {
   margin: 20px;
   font-size: larger;
   color: #e56132;
 }
 
+/* Estilos para a lista de convidados */
 .guest-list {
   margin: 20px;
 }
 
+/* Estilos para o grupo de resultados */
 .input-group-result {
   display: flex;
   flex-direction: column;
@@ -356,11 +400,13 @@ input:checked + .slider:before {
   border: 5px solid var(--div-border);
 }
 
+/* Estilos para os resultados */
 .results {
   list-style-type: none;
   width: 100%;
 }
 
+/* Estilos para os itens de resultado */
 .results li {
   position: relative;
   height: 40px;
@@ -372,16 +418,19 @@ input:checked + .slider:before {
   box-sizing: border-box;
 }
 
+/* Estilos para o nome do convidado nos itens de resultado */
 .results li strong {
   position: absolute;
   left: 0;
 }
 
+/* Estilos para o número de convidados nos itens de resultado */
 .results li span {
   position: absolute;
   right: 0;
 }
 
+/* Estilos para o cabeçalho dos resultados */
 #header-result {
   width: 100%;
   display: flex;
@@ -390,6 +439,7 @@ input:checked + .slider:before {
   margin-bottom: 5px;
 }
 
+/* Estilos para o texto do cabeçalho dos resultados */
 #header-result p {
   font-weight: 900;
   font-size: larger;
