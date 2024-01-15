@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../App.css"; // Importe seu arquivo CSS aqui
+import "../../App.css";
 
 const Theme = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
